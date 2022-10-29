@@ -50,11 +50,11 @@ end)
 RegisterCommand('displaycrashes', function(source, args, rawCommand)
     if GetResourceState('mysql-async') == 'started' then
         MySQL.Async.fetchAll('SELECT * FROM crashes', {}, function(results)
-            TriggerClientEvent('ik_crashlogger:displayCrashes', source, results)
+            TriggerClientEvent('eki_crashlogger:displayCrashes', source, results)
         end)
     elseif GetResourceState('oxmysql') == 'started' then
         MySQL.query('SELECT * from crashes', {}, function(results)
-            TriggerClientEvent('ik_crashlogger:displayCrashes', source, results)
+            TriggerClientEvent('eki_crashlogger:displayCrashes', source, results)
         end)
     else
         print('[CRASHLOGGER] MySQL resource not found, skipping crash display.')
@@ -62,5 +62,5 @@ RegisterCommand('displaycrashes', function(source, args, rawCommand)
 end, true)
 
 RegisterCommand('hidecrashes', function(source, args, rawCommand)
-    TriggerClientEvent('ik_crashlogger:hideCrashes', source)
+    TriggerClientEvent('eki_crashlogger:hideCrashes', source)
 end, true)
