@@ -1,6 +1,6 @@
 local blips = {}
 
-RegisterNetEvent('ik_crashlogger:displayCrashes', function(results)
+RegisterNetEvent('eki_crashlogger:displayCrashes', function(results)
     for _, blip in pairs(blips) do
         RemoveBlip(blip)
     end
@@ -25,7 +25,7 @@ RegisterNetEvent('ik_crashlogger:displayCrashes', function(results)
     end
 end)
 
-RegisterNetEvent('ik_crashlogger:hideCrashes', function()
+RegisterNetEvent('eki_crashlogger:hideCrashes', function()
     for _, blip in pairs(blips) do
         RemoveBlip(blip)
     end
