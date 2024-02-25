@@ -22,7 +22,8 @@ CreateThread(function()
     end
 end)
 
-AddEventHandler('playerDropped', function(source, reason)
+AddEventHandler('playerDropped', function(reason) --fix values
+		local source = source --Don't lose the source
     if not reason:find('Game crashed') and not reason:find('a cessé de fonctionner') and not reason:find('has stopped working') and not reason:find('ha dejado de funcionar') then
         return
     end
